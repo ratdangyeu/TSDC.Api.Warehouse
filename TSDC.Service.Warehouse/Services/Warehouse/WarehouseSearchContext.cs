@@ -8,7 +8,7 @@
 
         public int PageSize { get; set; }
 
-        public int Status { get; set; }
+        public int? Status { get; set; }
 
         public DateTime? FromDate { get; set; }
 
