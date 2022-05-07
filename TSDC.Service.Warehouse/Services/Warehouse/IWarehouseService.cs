@@ -12,7 +12,7 @@ namespace TSDC.Service.Warehouse
 
         Task<bool> ExistsAsync(string code);
 
-        Task<Core.Domain.Warehouse.Warehouse> GetByIdAsync(string id);
+        Task<Core.Domain.Warehouse.Warehouse> GetByIdAsync(int id);
 
         IPagedList<Core.Domain.Warehouse.Warehouse> Get(WarehouseSearchContext ctx);        
     }

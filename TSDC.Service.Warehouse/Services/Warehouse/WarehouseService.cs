@@ -52,14 +52,14 @@ namespace TSDC.Service.Warehouse
                      x.Code.Equals(code));
         }
 
-        public async Task<Core.Domain.Warehouse.Warehouse> GetByIdAsync(string id)
+        public async Task<Core.Domain.Warehouse.Warehouse> GetByIdAsync(int id)
         {
-            if (string.IsNullOrEmpty(id))
+            if (id == 0)
             {
                 throw new ArgumentNullException(nameof(id));
             }
 
-            var result = await _warehouseContext.Warehouse.FindAsync(id);
+            var result = await _warehouseContext.Warehouse.FirstOrDefaultAsync(x => x.Id == id);
 
             return result;
         }
